@@ -1,0 +1,37 @@
+/**
+ * @name Sasuke Blush Theme
+ * @author linsongru
+ * @version 1.0.0
+ * @description 佐助背景自訂主題
+ */
+
+@import url("https://clearvision.github.io/ClearVision-v6/main.css");
+
+:root {
+  --background-image: url("https://raw.githubusercontent.com/linsongru/-/main/Gemini_Generated_Image_eymgpieymgpieymg.jpg");
+  --background-position: center;
+  --background-size: cover;
+  --background-repeat: no-repeat;
+  --background-attachment: fixed;
+
+  --background-brightness: 85%;
+  --background-contrast: 105%;
+  --background-saturation: 105%;
+  --background-blur: 0px;
+
+  --backdrop-overlay: rgba(0, 0, 0, 0.55);
+  --background-shading: 55%;
+
+  --main-color: #c93b4b;
+  --hover-color: #a32937;
+  --success-color: #43b581;
+  --danger-color: #982929;
+}
+
+.appMount__51fd7,
+.bg__960e4,
+.chat_f75fb0,
+.container__2637a,
+.panels_c48ade {
+  background: transparent !important;
+}
