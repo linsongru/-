@@ -1,37 +1,89 @@
 /**
  * @name Sasuke Blush Theme
  * @author linsongru
- * @version 1.0.0
- * @description 佐助背景自訂主題
+ * @version 2.2.0
+ * @description 佐助背景自訂主題 (純雲端載入版)
  */
 
-@import url("https://clearvision.github.io/ClearVision-v6/main.css");
-
-:root {
-  --background-image: url("https://raw.githubusercontent.com/linsongru/-/main/Gemini_Generated_Image_eymgpieymgpieymg.jpg");
-  --background-position: center;
-  --background-size: cover;
-  --background-repeat: no-repeat;
-  --background-attachment: fixed;
-
-  --background-brightness: 85%;
-  --background-contrast: 105%;
-  --background-saturation: 105%;
-  --background-blur: 0px;
-
-  --backdrop-overlay: rgba(0, 0, 0, 0.55);
-  --background-shading: 55%;
-
-  --main-color: #c93b4b;
-  --hover-color: #a32937;
-  --success-color: #43b581;
-  --danger-color: #982929;
+/* 從 GitHub 雲端自動載入佐助圖片，換電腦也不用放圖 */
+body,
+#app-mount {
+  background-image: url("https://raw.githubusercontent.com/linsongru/-/main/Gemini_Generated_Image_eymgpieymgpieymg.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
 }
 
-.appMount__51fd7,
-.bg__960e4,
-.chat_f75fb0,
-.container__2637a,
-.panels_c48ade {
+/* 半透明深色遮罩 */
+#app-mount::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.52);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 介面透明化 */
+[class*="appMount_"],
+[class*="app_"],
+[class*="bg_"],
+[class*="layers_"],
+[class*="layer_"],
+[class*="container_"],
+[class*="chat_"],
+[class*="chatContent_"],
+[class*="sidebar_"],
+[class*="panels_"],
+[class*="members_"],
+[class*="member_"],
+[class*="scroller_"],
+[class*="wrapper_"],
+[class*="content_"],
+[class*="standardSidebarView_"],
+[class*="contentRegion_"],
+[class*="sidebarRegion_"] {
   background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* 聊天輸入框微透明 */
+[class*="channelTextArea_"],
+[class*="scrollableContainer_"] {
+  background-color: rgba(15, 15, 20, 0.78) !important;
+}
+
+/* 字體立體黑邊陰影與提亮 */
+#app-mount * {
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.95), 0px 0px 6px rgba(0, 0, 0, 0.85) !important;
+}
+
+[class*="messageContent_"],
+[class*="channelName_"],
+[class*="name_"] {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+[class*="modeUnread_"] [class*="name_"],
+[class*="modeConnected_"] [class*="name_"],
+[class*="icon_"] {
+  color: #ffffff !important;
+}
+
+[class*="timestamp_"],
+[class*="divider_"] span,
+[class*="activityText_"],
+[class*="subtext_"],
+[class*="membersGroup_"] {
+  color: #e2e5e9 !important;
+  font-weight: 500 !important;
+}
+
+[class*="sidebar_"],
+[class*="members_"] {
+  background-color: rgba(0, 0, 0, 0.28) !important;
 }
